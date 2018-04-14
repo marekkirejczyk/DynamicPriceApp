@@ -19,6 +19,10 @@ class Application {
     window.location.href = `./price.html?id=${id}`;
   }
 
+  navigateToAbout(id) {
+    window.location.href = `./about.html?id=${id}`;
+  }
+
   setupWelcome() {
     console.log('setupWelcome');
     document.getElementById("makeitbigger").onclick = this.navigateToQrCode;
@@ -29,21 +33,20 @@ class Application {
     const urlString = window.location.href;
     const url = new URL(urlString);
     const id = url.searchParams.get("id");
-    console.log(document);
     document.getElementById('priceFrom').innerHTML = 10.00;
     document.getElementById('priceTo').innerHTML = 20.00;
     document.getElementById('productId').innerHTML = id;
+    document.getElementById('goToAbout').onclick = () => this.navigateToAbout(id);
   }
 
   setupAbout() {
     console.log('setupAbout');
+    document.getElementById('goToAbout').onclick = 10.00;
   }
 
   setupScanQR() {
     console.log('setupScanQR');
-    new QRCodeReader((code) =>
-      window.location.href = `./price.html?id=${code.data}`
-    );
+    new QRCodeReader((code) => this.navigateToPrice(code.data));
   }
 
 }

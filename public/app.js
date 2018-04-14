@@ -30,7 +30,7 @@ class Application {
   retrieveEvents(assetId) {
     assetId = '0xcf5762ec31a875a18f12142059d54c75482e409b2bc2032efc963b276a724dc3';
     $.ajax({
-      url: 'http://gateway-dev.ambrosus.com/assets/' + assetId + '/events',
+      url: 'https://gateway-dev.ambrosus.com/assets/' + assetId + '/events',
       headers: {
         'Accept': 'application/json',
         'Content-Type': 'application/json'

@@ -28,13 +28,17 @@ class Application {
   }
 
   setupPrice() {
+    console.log('setupPrice')
     const urlString = window.location.href;
     const url = new URL(urlString);
     const id = url.searchParams.get("id");
-    document.getElementById('priceFrom').innerHTML = 10.00;
-    document.getElementById('priceTo').innerHTML = 20.00;
-    document.getElementById('productId').innerHTML = id;
-    document.getElementById('goToAbout').onclick = () => this.navigateToAbout(id);
+    const priceForm = 7.10;
+    const priceTo = 10.50;
+    const discount = ((1-priceForm/priceTo)*100).toFixed();
+    document.getElementById('priceFrom').innerHTML = `${(priceForm).toFixed(2)} &euro;`;
+    document.getElementById('priceTo').innerHTML = `${(priceTo).toFixed(2)} &euro;`;
+    document.getElementById('discount').innerHTML = `-${discount}%`;
+    document.getElementById('aboutButton').onclick = () => this.navigateToAbout(id);
   }
 
   setupAbout() {

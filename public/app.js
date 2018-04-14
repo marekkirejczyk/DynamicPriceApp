@@ -1,34 +1,49 @@
 class Application {
 
   start() {
-    // console.log(document.getElementById("makeitbigger"));
-    document.getElementById("makeitbigger").onclick = this.navigateToQrCode;
+    if (document.getElementsByClassName('indexContainer').length)
+      this.setupWelcome();
+    else if (document.getElementsByClassName('qrScanContainer').length)
+      this.setupScanQR();
+    else if (document.getElementsByClassName('priceContainer').length)
+      this.setupPrice();
+    else if (document.getElementsByClassName('aboutContainer').length)
+      this.setupAbout();
   }
 
   navigateToQrCode() {
     window.location.href = './qrscan.html';
   }
 
-  // setupScanQR() {
-  //   outputContainer = document.getElementById("output");
-  //   outputMessage = document.getElementById("outputMessage");
-  //   outputData = document.getElementById("outputData");
-    
-  //   function onQRCodeScanCallback(code) {
-  //     outputMessage.hidden = true;
-  //     outputData.parentElement.hidden = false;
-  //     outputData.innerText = code.data;
-  //   }
-    
-  //   function onNoQRCodeScanCallback() {
-  //     outputMessage.hidden = false;
-  //     outputData.parentElement.hidden = true;
-  //   }
-    
-  //   new QRCodeReader(onQRCodeScanCallback, onNoQRCodeScanCallback)
-  // }
+  navigateToPrice(id) {
+    window.location.href = `./price.html?id=${id}`;
+  }
+
+  navigateToAbout(id) {
+    window.location.href = `./about.html?id=${id}`;
+  }
+
+  setupWelcome() {
+    document.getElementById("makeitbigger").onclick = this.navigateToQrCode;
+  }
+
+  setupPrice() {
+    const urlString = window.location.href;
+    const url = new URL(urlString);
+    const id = url.searchParams.get("id");
+    document.getElementById('priceFrom').innerHTML = 10.00;
+    document.getElementById('priceTo').innerHTML = 20.00;
+    document.getElementById('productId').innerHTML = id;
+    document.getElementById('goToAbout').onclick = () => this.navigateToAbout(id);
+  }
+
+  setupAbout() {
+  }
+
+  setupScanQR() {
+    new QRCodeReader((code) => this.navigateToPrice(code.data));
+  }
 
 }
 
 new Application().start();
-

@@ -4,18 +4,20 @@ body {
   padding: 40px; /* needed for the main screen por lo menos */
   text-rendering: optimizeLegibility;
 }
-  body#mainScreen {
-    background: #050043;
-    color:#fff;
-    font-size:31px
-  }
-  body#mainScreen #makeitbigger {
-    background: #050043 url(./logo.png) no-repeat center top;
-    background-size: contain;
-    min-height: 50vh;
-    margin-top: 10vh;
-  }
-  
+
+body#mainScreen {
+  background: #050043;
+  color:#fff;
+  font-size:31px
+}
+
+body#mainScreen #makeitbigger {
+  background: #050043 url(./logo.png) no-repeat center top;
+  background-size: contain;
+  min-height: 50vh;
+  margin-top: 10vh;
+}
+
 a {
   color: #00B7FF;
 }

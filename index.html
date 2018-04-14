@@ -1,12 +1,26 @@
 <html>
-  <head>
-    <link media="all" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
-    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
-    <link media="all" rel="stylesheet" href="./public/style.css">
-    <script src="./public/app.js"></script>
-  </head>
 
-  <body>
+<head>
+  <link media="all" rel="stylesheet" href="./public/style.css">
+  <link media="all" rel="stylesheet" href="./public/QRCodeReader.css">
+  <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+  <script src="./public/jsQR.js"></script>
+</head>
 
-  </body>
+<body>
+  <div class="qrCodeScanner">
+    <canvas id="canvas"></canvas>
+    <div id="loadingMessage">🎥 Unable to access video stream (please make sure you have a webcam enabled)</div>
+    <div id="output" hidden="">
+      <div id="outputMessage">No QR code detected.</div>
+      <div hidden="">
+        <b>Data:</b>
+        <span id="outputData"></span>
+      </div>
+    </div>
+  </div>
+  <script src="./public/QRCodeReader.js"></script>
+  <script src="./public/app.js"></script>
+</body>
+
 </html>

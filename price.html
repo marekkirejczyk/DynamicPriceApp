@@ -2,23 +2,25 @@
 
 <head>
   <title> Ambrosus - check your price</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.0/moment.min.js"></script>
+  <script src="https://code.jquery.com/jquery-2.2.4.min.js" ></script>
   <link rel="icon" href="http://ambrosus.com/assets/19970733_1595172347191087_53501727_n-150x150.png" sizes="32x32">
   <link media="all" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
   <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
   <link media="all" rel="stylesheet" href="./public/style.css">
 </head>
 
-<body id="priceScreen">
+<body id="priceScreen" class="priceContainer">
 
   <p class="text-center"><img src="./public/oj.jpg" /></p>
   <p class="text-center" id="priceId">Innocent Orange Juice with Bits - 900ml</p>
   <div id="priceBox">
     <div id="priceLeft">
-      <pid="priceTo">6,50 &euro;</p>
-      <p id="priceFrom" class="text-strike">10,00 &euro;</p>
+      <p id="priceFrom"></p>
+      <p id="priceTo" class="text-strike"></p>
     </div>
     <div id="priceRight">
-      <p>-35%</p>
+      <p id="discount"></p>
     </div>
     <div class="clearfix"></div>
   </div>

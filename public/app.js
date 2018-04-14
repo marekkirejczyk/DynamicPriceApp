@@ -38,24 +38,9 @@ class Application {
 
   setupScanQR() {
     console.log('setupScanQR');
-    const outputContainer = document.getElementById("output");
-    const outputMessage = document.getElementById("outputMessage");
-    const outputData = document.getElementById("outputData");
-    outputContainer.hidden = false;
-
-    function onQRCodeScanCallback(code) {
-      outputMessage.hidden = true;
-      outputData.parentElement.hidden = false;
-      outputData.innerText = code.data;
-      window.location.href = `./price.html?id=${code.data}`;
-    }
-
-    function onNoQRCodeScanCallback() {
-      outputMessage.hidden = false;
-      outputData.parentElement.hidden = true;
-    }
-
-    new QRCodeReader(onQRCodeScanCallback, onNoQRCodeScanCallback);
+    new QRCodeReader((code) =>
+      window.location.href = `./price.html?id=${code.data}`
+    );
   }
 
 }

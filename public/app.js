@@ -26,10 +26,13 @@ class Application {
 
   setupPrice() {
     console.log('setupPrice');
-    var urlString = window.location.href;
-    var url = new URL(urlString);
-    var id = url.searchParams.get("id");
-    console.log(id);
+    const urlString = window.location.href;
+    const url = new URL(urlString);
+    const id = url.searchParams.get("id");
+    console.log(document);
+    document.getElementById('priceFrom').innerHTML = 10.00;
+    document.getElementById('priceTo').innerHTML = 20.00;
+    document.getElementById('productId').innerHTML = id;
   }
 
   setupAbout() {

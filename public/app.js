@@ -38,11 +38,9 @@ class Application {
   }
 
   setupAbout() {
-    console.log('setupAbout');
   }
 
   setupScanQR() {
-    console.log('setupScanQR');
     new QRCodeReader((code) => this.navigateToPrice(code.data));
   }
 

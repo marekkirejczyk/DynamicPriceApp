@@ -1,1 +1,1 @@
-# DynamicPriceApp
+# Ambrosus challenge

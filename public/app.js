@@ -24,12 +24,10 @@ class Application {
   }
 
   setupWelcome() {
-    console.log('setupWelcome');
     document.getElementById("makeitbigger").onclick = this.navigateToQrCode;
   }
 
   setupPrice() {
-    console.log('setupPrice');
     const urlString = window.location.href;
     const url = new URL(urlString);
     const id = url.searchParams.get("id");
@@ -41,7 +39,6 @@ class Application {
 
   setupAbout() {
     console.log('setupAbout');
-    document.getElementById('goToAbout').onclick = 10.00;
   }
 
   setupScanQR() {

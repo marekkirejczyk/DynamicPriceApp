@@ -10,18 +10,23 @@
   <link media="all" rel="stylesheet" href="./public/style.css">
 </head>
 
-<body class="priceContainer">
-  <div>
-    <span id="productId"></span><br />
-    <span id="priceFrom"></span><br />
-    <h1><span id="priceTo"></span></h1>
+<body id="priceScreen" class="priceContainer">
+
+  <p class="text-center"><img src="./public/oj.jpg" /></p>
+  <p class="text-center" id="priceId">Innocent Orange Juice with Bits - 900ml</p>
+  <div id="priceBox">
+    <div id="priceLeft">
+      <p id="priceFrom"></p>
+      <p id="priceTo" class="text-strike"></p>
+    </div>
+    <div id="priceRight">
+      <p id="discount"></p>
+    </div>
+    <div class="clearfix"></div>
   </div>
-  <!--
-  <button id="goToAbout">
-    See about
-  -->
-  </div>
-  <script src=" ./public/app.js "></script>
+
+  <div id="aboutButton"><span>+</span></div>
+  <script src="./public/app.js"></script>
 </body>
 
 </html>

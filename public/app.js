@@ -80,30 +80,30 @@ class Application {
   }
 
   setupPrice() {
+    console.log('setupPrice')
     const urlString = window.location.href;
     const url = new URL(urlString);
     const id = url.searchParams.get("id");
-    const helper = new BusinessLogic();
     const that = this;
     that.retrieveEvents(id);
 
     var dateString = '04-14-2018 17:00';
-    // document.getElementById('productId').innerHTML = id;
-    const priceFrom = 100;
+    const priceTo = 100;
     const maxDiscount = 0.4;
     setInterval(function() {
       console.log(new Date());
       const expirationDate = moment(dateString, 'MM-DD-YYYY HH:mm');
-      let price = that.calculatePrice(priceFrom, expirationDate, 7200, 0, maxDiscount);
-      document.getElementById('priceTo').innerHTML = price + ' $';
-    }, 2000);
+      let priceFrom = that.calculatePrice(priceTo, expirationDate, 7200, 0, maxDiscount);
 
+      const discount = ((1-priceFrom/priceTo)*100).toFixed(2);
+      document.getElementById('priceFrom').innerHTML = `${priceFrom} &euro;`;
+      document.getElementById('priceTo').innerHTML = `${(priceTo).toFixed(2)} &euro;`;
+      document.getElementById('discount').innerHTML = `-${discount}%`;
+      document.getElementById('aboutButton').onclick = () => this.navigateToAbout(id);
+    }, 1000);
 
-    document.getElementById('priceFrom').innerHTML = priceFrom;
-    document.getElementById('priceTo').innerHTML = priceFrom - priceFrom*maxDiscount;
-    document.getElementById('productId').innerHTML = 'Orange juice: ';
-    // document.getElementById('productId').innerHTML = id;
-    // document.getElementById('goToAbout').onclick = () => this.navigateToAbout(id);
+    document.getElementById('productId').innerHTML = id;
+    document.getElementById('goToAbout').onclick = () => this.navigateToAbout(id);
   }
 
 

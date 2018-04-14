@@ -75,7 +75,52 @@ a {
   line-height: 0.9;
   margin-bottom: 80px
 }
+#aboutButton span a {
+color:#fff
+}
 
+#aboutContainer {
+
+}
+#aboutContainer ul {
+  list-style: none;
+  padding: 0;
+}
+#aboutContainer ul li {
+  margin-bottom:25px;
+  line-height: 1.2
+}
+#aboutContainer #aboutHeader {
+  background:#050043;
+  padding: 50px;
+  margin: -40px -40px 0px -40px;
+  color:#fff
+}
+#aboutContainer header {
+  padding: 20px;
+  border:2px solid #050043;
+  border-width: 1px 0;
+  margin:0 -40px 20px -40px;
+  font-weight: bold;
+}
+
+#ncTitle .super  {
+  font-size: 41px;
+  margin-bottom: 0;
+}
+#ncTitle .calories  {
+  font-size: 61px;
+  margin-bottom: 20px;
+  font-weight: bold;
+  padding-bottom: 10px;
+  border-bottom: 2px solid;
+}
+#mainData ul li {
+  border-bottom: 1px solid;
+}
+#mainData ul li#calcium {
+  border: 0
+}
 .clearfix:after {
   visibility: hidden;
   display: block;

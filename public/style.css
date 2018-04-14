@@ -24,5 +24,8 @@ a {
 
 .title {
   font-size:70px;
-  line-height: 1
+  line-height: 1.1  
+}
+.byline {
+  font-size: 45px;
 }

@@ -30,7 +30,6 @@ class QRCodeReader {
       if (this.video.readyState === this.video.HAVE_ENOUGH_DATA) {
         loadingMessage.hidden = true;
         this.canvasElement.hidden = false;
-        outputContainer.hidden = false;
   
         this.canvasElement.height = this.video.videoHeight;
         this.canvasElement.width = this.video.videoWidth;
